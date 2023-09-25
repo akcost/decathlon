@@ -1,7 +1,6 @@
 package model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -23,7 +22,6 @@ public class Result {
     @NonNull
     @Enumerated(EnumType.STRING)
     @Column(name = "event_name")
-    @Size(min = 2, max = 50)
     private EventName eventName;
 
     @NonNull
