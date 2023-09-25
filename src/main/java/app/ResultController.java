@@ -121,10 +121,11 @@ public class ResultController {
         }
 
         if (A != 0) {
-            if (eventName == EVENT_100_METERS || eventName == EVENT_LONG_JUMP || eventName == EVENT_POLE_VAULT) {
-                points = (int) Math.floor(A * Math.pow(Math.abs(result - B), C));
+            if (eventName == EVENT_100_METERS || eventName == EVENT_400_METERS ||
+                    eventName == EVENT_1500_METERS || eventName == EVENT_110_METERS_HURDLES) {
+                points = (int) Math.floor(A * Math.pow(Math.abs(B - result), C));
             } else {
-                points = (int) Math.floor(A * Math.pow((B - result), C));
+                points = (int) Math.floor(A * Math.pow(result - B, C));
             }
         } else {
             points = 0;
@@ -132,5 +133,6 @@ public class ResultController {
 
         return points;
     }
+
 
 }
