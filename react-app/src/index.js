@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import './index.css';
 import HomePage from "./HomePage";
+import ResultsPage from "./ResultsPage";
 
 
 export default function App() {
@@ -9,6 +10,7 @@ export default function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
+                <Route path="/results" element={<ResultsPage/>}/>
             </Routes>
         </BrowserRouter>
     );
