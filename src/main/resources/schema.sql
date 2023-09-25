@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS results;
+DROP SEQUENCE IF EXISTS seq1;
+
+CREATE SEQUENCE seq1 AS INTEGER START WITH 1;
+
+CREATE TABLE results
+(
+    id         BIGINT NOT NULL PRIMARY KEY DEFAULT nextval('seq1'),
+    event_name VARCHAR(100),
+    result_value DOUBLE PRECISION,
+    points INT
+);

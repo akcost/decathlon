@@ -1,0 +1,100 @@
+plugins {
+	id 'war'
+	id 'org.gretty' version '4.0.3'
+}
+
+repositories {
+	mavenCentral()
+	maven { url "https://repo.spring.io/milestone/" }
+}
+
+sourceCompatibility = 17
+
+def springVersion = '6.0.0-RC1'
+def log4jVersion = '2.19.0'
+def lombokVersion = '1.18.24'
+def hibernateValidatorVersion = '8.0.0.Final'
+def jacksonDataBindVersion = '2.13.4.2'
+def jacksonDataTypeVersion = '2.13.4'
+def hibernateVersion = '6.1.5.Final'
+
+
+
+dependencies {
+
+	implementation group: 'org.postgresql',
+			name: 'postgresql',
+			version: '42.5.0'
+
+	implementation group: 'org.springframework',
+			name: 'spring-webmvc',
+			version: springVersion
+
+	implementation group: 'org.springframework',
+			name: 'spring-context',
+			version: springVersion
+
+	implementation group: 'org.springframework',
+			name: 'spring-orm',
+			version: springVersion
+
+	implementation group: 'org.hibernate',
+			name: 'hibernate-core',
+			version: hibernateVersion
+
+	implementation group: 'org.springframework',
+			name: 'spring-jdbc',
+			version: springVersion
+
+	implementation group: 'jakarta.validation',
+			name: 'jakarta.validation-api',
+			version: '3.0.2'
+
+	implementation group: 'org.hibernate',
+			name: 'hibernate-validator',
+			version: hibernateValidatorVersion
+
+	implementation group: 'org.glassfish',
+			name: 'jakarta.el',
+			version: '4.0.2'
+
+	implementation group: 'com.fasterxml.jackson.core',
+			name: 'jackson-databind',
+			version: jacksonDataBindVersion
+
+	implementation group: 'com.fasterxml.jackson.datatype',
+			name: 'jackson-datatype-jsr310',
+			version: jacksonDataTypeVersion
+
+	implementation group: 'org.apache.logging.log4j',
+			name: 'log4j-api',
+			version: log4jVersion
+
+	implementation group: 'org.apache.logging.log4j',
+			name: 'log4j-core',
+			version: log4jVersion
+
+	testImplementation group: 'org.springframework',
+			name: 'spring-test',
+			version: springVersion
+
+	testImplementation group: 'junit',
+			name: 'junit',
+			version: '4.13.2'
+
+	testImplementation group: 'org.hamcrest',
+			name: 'hamcrest',
+			version: '2.2'
+
+	compileOnly group: 'org.projectlombok',
+			name: 'lombok',
+			version: lombokVersion
+
+	annotationProcessor group: 'org.projectlombok',
+			name: 'lombok',
+			version: lombokVersion
+}
+
+gretty {
+	contextPath = '/'
+}
